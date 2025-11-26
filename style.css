@@ -135,24 +135,59 @@ main {
     background: #f8fafc;
 }
 
-.fallback a {
-    color: var(--primary-color);
-    text-decoration: underline;
-    font-weight: 600;
-    margin-top: 0.5rem;
+.fallback p {
+    margin-bottom: 1rem;
+}
+
+.fallback a.btn-download {
+    color: #ffffff;
+    background-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.fallback a.btn-download:hover {
+    background-color: #1a365d;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .container {
-        padding: 0 1rem;
+        padding: 0 0.5rem;
+        /* Maximize space */
+    }
+
+    .site-header {
+        padding: 1rem 0;
     }
 
     main {
-        padding: 1rem 0;
+        padding: 0.5rem 0;
+    }
+
+    .document-viewer {
+        padding: 0.25rem;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    /* On mobile, the decorative top border might take up too much space or look odd if flush */
+    .document-viewer::before {
+        display: none;
+    }
+}
+
+/* Fix for iOS height issues */
+@supports (-webkit-touch-callout: none) {
+    body {
+        height: -webkit-fill-available;
     }
 }
