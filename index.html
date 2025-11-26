@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Homework Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">Nazan Akın<span class="highlight"> YEM</span></div>
+            <!-- <nav>
+                <span class="student-name">Master's Candidate</span>
+            </nav> -->
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!--<section class="intro">
+                <h1>Legal Studies Portfolio</h1>
+                <p class="subtitle">Homework Submission & Case Analysis</p>
+                <div class="instruction-badge">
+                    <span class="icon">ℹ️</span>
+                    <span>To update: Replace <strong>homework.pdf</strong> in the folder.</span>
+                </div>
+            </section>-->
+
+            <section class="document-viewer">
+                <div class="pdf-container">
+                    <object data="homework.pdf" type="application/pdf" width="100%" height="100%">
+                        <div class="fallback">
+                            <p>Your browser does not support PDFs. <a href="homework.pdf">Download the PDF</a> to view
+                                it: <a href="homework.pdf">Download PDF</a>.</p>
+                        </div>
+                    </object>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!--<footer>
+        <div class="container">
+            <p>&copy; 2024 Law Student Portfolio. All rights reserved.</p>
+        </div>
+    </footer>-->
+
+    <script src="main.js"></script>
+</body>
+
+</html>

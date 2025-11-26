@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #0c1c38;
+    /* Deep Royal Navy */
+    --secondary-color: #1e293b;
+    /* Dark Slate */
+    --accent-color: #8d6e3f;
+    /* Antique Gold/Brown */
+    --accent-light: #c5a059;
+    /* Lighter Gold for highlights */
+    --bg-color: #fdfbf7;
+    /* Warm Paper/Cream White */
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+    /* Prevent body scroll if viewer handles it */
+}
+
+.container {
+    max-width: 1400px;
+    /* Wider for better PDF viewing */
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(to right, var(--primary-color), #1a365d);
+    padding: 1.25rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-bottom: 3px solid var(--accent-color);
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.site-header .container {
+    flex-direction: row;
+    justify-content: center;
+    /* Center the logo since nav is gone */
+    align-items: center;
+    height: auto;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo .highlight {
+    color: var(--accent-light);
+    font-style: italic;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Keep main from scrolling, let PDF scroll */
+}
+
+/* PDF Viewer Container */
+.document-viewer {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 0.75rem;
+    border-radius: 4px;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d1d5db;
+    position: relative;
+}
+
+/* Decorative "Law" border effect */
+.document-viewer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 4px 4px 0 0;
+}
+
+.pdf-container {
+    width: 100%;
+    height: 100%;
+    background-color: #525659;
+    /* Standard PDF viewer background gray */
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #64748b;
+    background: #f8fafc;
+}
+
+.fallback a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    main {
+        padding: 1rem 0;
+    }
+}
